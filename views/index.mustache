@@ -1,0 +1,21 @@
+<html>
+<body>
+<p><a href="/">Start</a></p>
+{{^files}}
+<p>
+  Hello please login into GitHub:
+  <a href="https://github.com/login/oauth/authorize?client_id={{client_id}}&redirect_uri={{redirect_url}}&scope={{scope}}&state={{state}}">Login</a>
+</p>
+{{/files}}
+<ul>
+{{#files}}
+  <li>
+  {{#.}}
+    <b>{{name}}</b>
+  {{/.}}
+  </li>
+{{/files}}
+</ul>
+<pre>{{file}}</pre>
+</body>
+</html>
